@@ -2,11 +2,11 @@ body{
   background-color: #8eadc5;
 }
 
-body.claro{
+body.light{
   background-color: #8de1bd;
 }
 
-body.oscuro{
+body.dark{
   background-color: #577a76;
 }
 
@@ -20,7 +20,7 @@ button{
   margin-top: 10px;
 }
 
-#zona-gestos{
+#zone-gestures{
   width:100%;
   background-color: #7fba67;
   margin-top: 10px;
@@ -35,27 +35,27 @@ button{
   text-transform: uppercase;
 }
 
-#zona-gestos.doubletap{
-    -webkit-animation: pulsacion 1.5s 1;
+#zone-gestures.doubletap{
+    -webkit-animation: press 1.5s 1;
 }
 
-#zona-gestos.press{
-    -webkit-animation: presion 1.5s 1;
+#zone-gestures.press{
+    -webkit-animation: pressure 1.5s 1;
 }
 
-#zona-gestos.swipe-derecha{
-    -webkit-animation: swipe-derecha 3s 1;
+#zone-gestures.swipe-right{
+    -webkit-animation: swipe-right 3s 1;
 }
 
-#zona-gestos.swipe-izquierda{
-    -webkit-animation: swipe-izquierda 3s 1;
+#zone-gestures.swipe-left{
+    -webkit-animation: swipe-left 3s 1;
 }
 
-#zona-gestos.rotate{
+#zone-gestures.rotate{
     -webkit-animation: rotate 3s 1;
 }
 
-@-webkit-keyframes pulsacion {
+@-webkit-keyframes press {
   0%, 100% {
     background-color: #7fba67;
   }
@@ -64,7 +64,7 @@ button{
   }
 }
 
-@-webkit-keyframes presion {
+@-webkit-keyframes pressure {
   0%, 100% {
     background-color: #7fba67;
   }
@@ -74,7 +74,7 @@ button{
 }
 
 
-@-webkit-keyframes swipe-derecha {
+@-webkit-keyframes swipe-right {
   0%, 100% {
     margin-left: 0%;
   }
@@ -83,7 +83,7 @@ button{
   }
 }
 
-@-webkit-keyframes swipe-izquierda {
+@-webkit-keyframes swipe-left {
   0%, 100% {
     width: 100%;
   }

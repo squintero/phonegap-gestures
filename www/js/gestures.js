@@ -1,71 +1,71 @@
 var app={
-  inicio: function(){
-    this.iniciaBotones();
-    this.iniciaFastClick();
-    this.iniciaHammer();
+  init: function(){
+    this.initButtons();
+    this.initFastClick();
+    this.initHammer();
   },
 
-  iniciaFastClick: function () {
+  initFastClick: function () {
     FastClick.attach(document.body);
   },
   
-  iniciaBotones: function(){
-    var botonClaro = document.querySelector('#claro');
-    var botonOscuro = document.querySelector('#oscuro');
+  initButtons: function(){
+    var buttonLight = document.querySelector('#light');
+    var buttonDark = document.querySelector('#dark');
     
-    botonClaro.addEventListener('click',this.ponloClaro,false);
-    botonOscuro.addEventListener('click',app.ponloOscuro,false);
+    buttonLight.addEventListener('click',this.makeItLight,false);
+    buttonDark.addEventListener('click',app.makeItDark,false);
   },
 
-  iniciaHammer: function() {
-    var zona = document.getElementById('zona-gestos');
-    var hammertime = new Hammer(zona);
+  initHammer: function() {
+    var zone = document.getElementById('zone-gestures');
+    var hammertime = new Hammer(zone);
     
     hammertime.get('pinch').set({ enable: true });
     hammertime.get('rotate').set({ enable: true });
 
-    zona.addEventListener('webkitAnimationEnd',function(e){
-      zona.className='';
+    zone.addEventListener('webkitAnimationEnd',function(e){
+      zone.className='';
     });
     
      hammertime.on('doubletap', function(ev) {
-      zona.className='doubletap';
+      zone.className='doubletap';
     });
 
     hammertime.on('press', function(ev) {
-      zona.className='press';
+      zone.className='press';
     });
 
     hammertime.on('swipe', function(ev) {
       var clase=undefined;
-      direccion=ev.direction;
+      direction=ev.direction;
       
-      if (direccion==4) clase='swipe-derecha';
-      if (direccion==2) clase='swipe-izquierda';
+      if (direction==4) clase='swipe-right';
+      if (direction==2) clase='swipe-left';
       
-      zona.className=clase;
+      zone.className=clase;
     });
 
 
     hammertime.on('rotate', function(ev) {
       var umbral=25;
-      if (ev.distance > umbral) zona.className='rotate';
+      if (ev.distance > umbral) zone.className='rotate';
     });
   },
 
-  ponloClaro: function(){
-    document.body.className = 'claro';
+  makeItLight: function(){
+    document.body.className = 'light';
   },
 
-  ponloOscuro: function(){
-    document.body.className = 'oscuro';
+  makeItDark: function(){
+    document.body.className = 'darl';
   },
 
 };
 
 if ('addEventListener' in document) {
     document.addEventListener('DOMContentLoaded', function() {
-        app.inicio();
+        app.init();
     }, false);
 }
 
