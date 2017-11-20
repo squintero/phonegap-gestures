@@ -1,10 +1,6 @@
-# A Blank PhoneGap App
+# A PhoneGap App with basic gestures
 
 ## Usage
-
-### PhoneGap CLI
-
-    $ phonegap create my-app --template blank
 
 ### Desktop
 
